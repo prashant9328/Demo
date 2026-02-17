@@ -2,3 +2,377 @@
 <h2>Patil</h2>
 <h3>asd</h3>
 <h1>Jay Shree Krishna</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .invitation-container {
+            max-width: 800px;
+            width: 100%;
+            background: linear-gradient(135deg, #fff 0%, #fdfbfb 100%);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .decorative-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 8px solid transparent;
+            border-image: linear-gradient(135deg, #d4af37, #f4e5c3, #d4af37) 1;
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e5c3 100%);
+            padding: 40px 30px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '❀';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 40px;
+            color: rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .header::after {
+            content: '❀';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 40px;
+            color: rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        .content {
+            padding: 50px 40px;
+            position: relative;
+        }
+
+        .couple-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .couple-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            position: relative;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .couple-image svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+        }
+
+        .names {
+            font-size: 3em;
+            color: #d4af37;
+            margin: 20px 0;
+            font-weight: 300;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .ampersand {
+            font-size: 1.2em;
+            color: #c19a6b;
+            margin: 0 15px;
+            font-style: italic;
+        }
+
+        .welcome-text {
+            font-size: 1.3em;
+            color: #555;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 30px auto;
+        }
+
+        .details-section {
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .detail-item {
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .detail-label {
+            font-size: 1.1em;
+            color: #d4af37;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .detail-value {
+            font-size: 1.4em;
+            color: #333;
+            font-weight: 300;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #666;
+            font-style: italic;
+        }
+
+        .hearts {
+            font-size: 2em;
+            color: #d4af37;
+            margin: 20px 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .names {
+                font-size: 2em;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .details-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-container">
+        <div class="decorative-border"></div>
+        
+        <div class="header">
+            <h1>Wedding Invitation</h1>
+            <p>Together with their families</p>
+        </div>
+
+        <div class="content">
+            <div class="couple-section">
+                <div class="couple-image">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Decorative Circle -->
+                        <circle cx="100" cy="100" r="95" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        <circle cx="100" cy="100" r="88" fill="none" stroke="#f4e5c3" stroke-width="1" stroke-dasharray="5,5"/>
+                        
+                        <!-- Groom (Left) -->
+                        <g transform="translate(60, 80)">
+                            <!-- Head -->
+                            <circle cx="0" cy="0" r="18" fill="#fdd9b5"/>
+                            <!-- Hair -->
+                            <path d="M -15,-8 Q -18,-15 -12,-20 Q -6,-22 0,-22 Q 6,-22 12,-20 Q 18,-15 15,-8" fill="#2c1810"/>
+                            <!-- Eyes -->
+                            <circle cx="-6" cy="-2" r="2" fill="#333"/>
+                            <circle cx="6" cy="-2" r="2" fill="#333"/>
+                            <!-- Smile -->
+                            <path d="M -8,4 Q 0,8 8,4" stroke="#333" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+                            <!-- Body (Suit) -->
+                            <path d="M 0,18 L -15,35 L -15,55 L 15,55 L 15,35 Z" fill="#1a1a1a"/>
+                            <!-- Tie -->
+                            <path d="M 0,18 L -3,25 L 0,40 L 3,25 Z" fill="#d4af37"/>
+                            <!-- Collar -->
+                            <path d="M -5,18 L -10,25 M 5,18 L 10,25" stroke="#fff" fill="none" stroke-width="2"/>
+                        </g>
+
+                        <!-- Bride (Right) -->
+                        <g transform="translate(140, 80)">
+                            <!-- Head -->
+                            <circle cx="0" cy="0" r="18" fill="#fdd9b5"/>
+                            <!-- Hair -->
+                            <path d="M -15,-8 Q -18,-15 -12,-22 Q -6,-24 0,-24 Q 6,-24 12,-22 Q 18,-15 15,-8 L 15,5 Q 12,8 8,8 L -8,8 Q -12,8 -15,5 Z" fill="#3d2817"/>
+                            <!-- Eyes -->
+                            <circle cx="-6" cy="-2" r="2" fill="#333"/>
+                            <circle cx="6" cy="-2" r="2" fill="#333"/>
+                            <!-- Smile -->
+                            <path d="M -8,4 Q 0,8 8,4" stroke="#333" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+                            <!-- Veil decorations -->
+                            <circle cx="-12" cy="-5" r="3" fill="#fff" opacity="0.8"/>
+                            <circle cx="12" cy="-5" r="3" fill="#fff" opacity="0.8"/>
+                            <!-- Body (Dress) -->
+                            <path d="M 0,18 L -20,55 L 20,55 Z" fill="#fff"/>
+                            <!-- Dress details -->
+                            <path d="M -10,35 Q 0,38 10,35" stroke="#f0f0f0" fill="none" stroke-width="1"/>
+                        </g>
+
+                        <!-- Hearts -->
+                        <path d="M 100,45 L 95,40 Q 92,37 92,34 Q 92,29 96,29 Q 98,29 100,31 Q 102,29 104,29 Q 108,29 108,34 Q 108,37 105,40 Z" fill="#ff6b6b"/>
+                        
+                        <!-- Decorative flowers -->
+                        <circle cx="30" cy="170" r="5" fill="#d4af37" opacity="0.6"/>
+                        <circle cx="170" cy="170" r="5" fill="#d4af37" opacity="0.6"/>
+                        <circle cx="40" cy="30" r="4" fill="#f4e5c3" opacity="0.6"/>
+                        <circle cx="160" cy="30" r="4" fill="#f4e5c3" opacity="0.6"/>
+                    </svg>
+                </div>
+
+                <div class="names">
+                    <span id="groomName">Rahul Sharma</span>
+                    <span class="ampersand">&</span>
+                    <span id="brideName">Priya Patel</span>
+                </div>
+
+                <div class="welcome-text">
+                    <p>Request the honor of your presence at the celebration of their wedding</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="details-section">
+                <div class="detail-item">
+                    <div class="detail-label">📅 Date</div>
+                    <div class="detail-value" id="weddingDate">Saturday, March 15, 2025</div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-label">🕐 Time</div>
+                    <div class="detail-value" id="weddingTime">6:00 PM Onwards</div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-label">📍 Venue</div>
+                    <div class="detail-value" id="weddingVenue">The Grand Palace<br>123 Wedding Street, Mumbai</div>
+                </div>
+            </div>
+
+            <div class="hearts">💕 ✨ 💕</div>
+
+            <div class="footer">
+                <p>Your presence will make our day more special</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">Looking forward to celebrating with you!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // You can customize these values
+        const weddingDetails = {
+            groomName: "Rahul Sharma",
+            brideName: "Priya Patel",
+            date: "Saturday, March 15, 2025",
+            time: "6:00 PM Onwards",
+            venue: "The Grand Palace<br>123 Wedding Street, Mumbai"
+        };
+
+        // Update the invitation with custom details
+        function updateInvitation() {
+            document.getElementById('groomName').textContent = weddingDetails.groomName;
+            document.getElementById('brideName').textContent = weddingDetails.brideName;
+            document.getElementById('weddingDate').textContent = weddingDetails.date;
+            document.getElementById('weddingTime').textContent = weddingDetails.time;
+            document.getElementById('weddingVenue').innerHTML = weddingDetails.venue;
+        }
+
+        // Add animation on load
+        window.addEventListener('load', () => {
+            updateInvitation();
+            
+            // Add entrance animation
+            const container = document.querySelector('.invitation-container');
+            container.style.opacity = '0';
+            container.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 0.8s ease-out';
+                container.style.opacity = '1';
+                container.style.transform = 'scale(1)';
+            }, 100);
+        });
+
+        // Add interactive hover effects
+        document.querySelector('.couple-image').addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05) rotate(2deg)';
+            this.style.transition = 'all 0.3s ease';
+        });
+
+        document.querySelector('.couple-image').addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0deg)';
+        });
+    </script>
+</body>
+</html>
